@@ -5,5 +5,12 @@
         "body": "Angry Horse",
         "created_time": "04-11-2023 16:20:32",
         "modified_time": "04-11-2023 16:46:01"
+    },
+    {
+        "note_id": 2,
+        "title": "Good horse",
+        "body": "Thes a test mesage for good horse",
+        "created_time": "04-11-2023 16:57:39",
+        "modified_time": "04-11-2023 16:57:39"
     }
 ]

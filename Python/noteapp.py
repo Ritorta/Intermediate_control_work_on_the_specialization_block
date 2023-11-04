@@ -59,11 +59,12 @@ class NoteApp:
 
     def view_all_notes(self):
         if self.notes:
+            print('You list notes:\n')
             for note in self.notes:
-                print('You list notes:\n')
                 print(note)
-            else:
-                print('Error not found note')    
+            print('\n')
+        else:
+            print('Error not found note')    
 
 
             
