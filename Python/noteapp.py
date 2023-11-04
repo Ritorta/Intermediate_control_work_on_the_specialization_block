@@ -37,15 +37,25 @@ class NoteApp:
         except FileNotFoundError:
             self.notes = []
 
+    def edit_note_title(self, note_id, new_title):
+        for note in self.notes:
+            if note_id == note_id:
+                note.title = new_title
+                note.modified_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+                self.add_note()
+                print('Save new title success')
+                return
+        print('Edit title fail')            
+
     def edit_note_body(self, note_id, new_body):
         for note in self.notes:
             if note.note_id == note_id:
                 note.body = new_body
                 note.modified_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
                 self.save_notes()
-                print('Save success')
+                print('Save new body success')
                 return
-        print('Edit faill')    
+        print('Edit body fail')    
 
             
     
