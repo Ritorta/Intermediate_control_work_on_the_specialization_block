@@ -20,3 +20,11 @@ def save_notes(self):
     with open("notes.json", "w") as file:
         json.dump(data, file, indent=4)
 
+def add_note(self, title, body):
+        note_id = len(self.notes) + 1
+        created_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        modified_time = created_time
+        note = Note(note_id, title, body, created_time, modified_time)
+        self.notes.append(note)
+        self.save_notes()
+        print("Note added successfully.")
