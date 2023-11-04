@@ -12,3 +12,8 @@ def input_1():
     title = input('Enter note title: ')
     body = input('Enter note body: ')
     return title, body
+
+def input_3():
+    note_id = int(input('Enter iD note: '))
+    new_body = input('Enter new note: ')
+    return note_id, new_body
