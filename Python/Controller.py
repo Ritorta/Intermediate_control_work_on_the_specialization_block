@@ -14,5 +14,4 @@ def main():
         else:
             print('Error: Invalid number, choice number is menu.')
 
-if __name__ == "__main__":
-    main()
+main()

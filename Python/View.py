@@ -9,6 +9,6 @@ def user_input():
     return ask
 
 def input_1():
-    title = input("Enter note title: ")
-    body = input("Enter note body: ")
+    title = input('Enter note title: ')
+    body = input('Enter note body: ')
     return title, body

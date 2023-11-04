@@ -7,4 +7,4 @@ class Note:
         self.modified_time = modified_time
 
     def __repr__(self):
-        return f"Title: {self.title}, Created: {self.created_time}, Modified: {self.modified_time}"
+        return f'Title: {self.title}, Created: {self.created_time}, Modified: {self.modified_time}'
