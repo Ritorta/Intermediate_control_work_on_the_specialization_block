@@ -14,15 +14,28 @@ def input_1():
     return title, body
 
 def input_2():
-    note_id = int(input('Enter iD note: '))
-    new_title = input('Enter new note: ')
-    return note_id, new_title
+    while True:
+        try:
+            note_id = int(input('Enter iD note: '))
+            new_title = input('Enter new note: ')
+            return note_id, new_title
+        except ValueError:
+            print('Error, please enter the number iD')    
 
 def input_3():
-    note_id = int(input('Enter iD note: '))
-    new_body = input('Enter new note: ')
-    return note_id, new_body
+    while True:
+        try:
+            note_id = int(input('Enter iD note: '))
+            new_body = input('Enter new note: ')
+            return note_id, new_body
+        except ValueError:
+            print('Error, please enter the number iD')     
 
 def input_5():
-    note_id = int(input('Enter iD note: '))
-    return note_id
+    while True:
+        try:
+            note_id = int(input('Enter iD note: '))
+            return note_id
+        except ValueError:
+            print('Error, please enter the number iD') 
+    

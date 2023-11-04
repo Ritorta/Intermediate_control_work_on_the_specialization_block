@@ -1,6 +1,4 @@
-import notes
 import json
-import os
 from notes import Note
 from datetime import datetime
 
@@ -38,42 +36,50 @@ class NoteApp:
             self.notes = []
 
     def edit_note_title(self, note_id, new_title):
-        for note in self.notes:
-            if note.note_id == note_id:
-                note.title = new_title
-                note.modified_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-                self.save_notes()
-                print('Save new title success')
-                return
-        print('Edit title fail')            
+        try:
+            for note in self.notes:
+                if note.note_id == note_id:
+                    note.title = new_title
+                    note.modified_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+                    self.save_notes()
+                    print('Save new title success')
+                    return
+            raise ValueError('Please enter existing iD number')  
+        except ValueError as e:
+            print('Edit title fail:', e)
 
     def edit_note_body(self, note_id, new_body):
-        for note in self.notes:
-            if note.note_id == note_id:
-                note.body = new_body
-                note.modified_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-                self.save_notes()
-                print('Save new body success')
-                return
-        print('Edit body fail')
+        try:
+            for note in self.notes:
+                if note.note_id == note_id:
+                    note.body = new_body
+                    note.modified_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
+                    self.save_notes()
+                    print('Save new body success')
+                    return
+            raise ValueError('Please enter existing iD number')  
+        except ValueError as e:
+            print('Edit title fail:', e)
 
     def view_all_notes(self):
         if self.notes:
-            print('You list notes:\n')
+            print('You list notes:')
             for note in self.notes:
                 print(note)
-            print('\n')
+            input("Нажмите клавижшу для продолжения: ")
         else:
             print('Error not found note')    
 
     def delete_note(self, note_id):
-        for note in self.notes:
-            if note.note_id == note_id:
-                self.notes.remove(note)
-                self.save_notes()
-                print('Note deleted success')
-                return
-        print('Error deleted note')    
+        try:
+            for note in self.notes:
+                if note.note_id == note_id:
+                    self.notes.remove(note)
+                    self.save_notes()
+                    print('Note deleted success')
+                    return
+            raise ValueError('Please enter existing iD number')  
+        except ValueError as e:
+            print('Edit title fail:', e)
 
-            
-    
+       
