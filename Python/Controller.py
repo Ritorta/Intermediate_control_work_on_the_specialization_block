@@ -16,6 +16,9 @@ def main():
             note_app.edit_note_body(note_id=note_id, new_body=new_body)
         elif num == 4:
             note_app.view_all_notes()
+        elif num == 5:
+            note_id = view.input_5()
+            note_app.delete_note(note_id=note_id)
         elif num == 6:
             print('Goodbye')
             break

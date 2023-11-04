@@ -22,3 +22,7 @@ def input_3():
     note_id = int(input('Enter iD note: '))
     new_body = input('Enter new note: ')
     return note_id, new_body
+
+def input_5():
+    note_id = int(input('Enter iD note: '))
+    return note_id
