@@ -1,6 +1,7 @@
 import notes
 import json
 import os
+from notes import Note
 from datetime import datetime
 
 class NoteApp:
@@ -13,7 +14,7 @@ class NoteApp:
             with open("notes.json", "r") as file:
                 data = json.load(file)
                 for note_data in data:
-                    note = notes(note_data["note_id"], note_data["title"], note_data["body"], note_data["created_time"], note_data["modified_time"])
+                    note = Note(note_data["note_id"], note_data["title"], note_data["body"], note_data["created_time"], note_data["modified_time"])
                     self.notes.append(note)
         except FileNotFoundError:
             self.notes = []
@@ -30,7 +31,7 @@ class NoteApp:
             note_id = len(self.notes) + 1
             created_time = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             modified_time = created_time
-            note = notes(note_id, title, body, created_time, modified_time)
+            note = Note(note_id, title, body, created_time, modified_time)
             self.notes.append(note)
             self.save_notes()
             print("Note added successfully.")

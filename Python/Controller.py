@@ -1,7 +1,6 @@
 import view
 import noteApp
 
-
 def main():
     note_app = noteApp.NoteApp()
     while True:
