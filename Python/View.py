@@ -13,6 +13,11 @@ def input_1():
     body = input('Enter note body: ')
     return title, body
 
+def input_2():
+    note_id = int(input('Enter iD note: '))
+    new_title = input('Enter new note: ')
+    return note_id, new_title
+
 def input_3():
     note_id = int(input('Enter iD note: '))
     new_body = input('Enter new note: ')

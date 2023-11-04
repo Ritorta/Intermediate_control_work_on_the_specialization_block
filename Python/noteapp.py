@@ -39,10 +39,10 @@ class NoteApp:
 
     def edit_note_title(self, note_id, new_title):
         for note in self.notes:
-            if note_id == note_id:
+            if note.note_id == note_id:
                 note.title = new_title
                 note.modified_time = datetime.now().strftime('%d-%m-%Y %H:%M:%S')
-                self.add_note()
+                self.save_notes()
                 print('Save new title success')
                 return
         print('Edit title fail')            
