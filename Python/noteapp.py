@@ -55,7 +55,16 @@ class NoteApp:
                 self.save_notes()
                 print('Save new body success')
                 return
-        print('Edit body fail')    
+        print('Edit body fail')
+
+    def view_all_notes(self):
+        if self.notes:
+            for note in self.notes:
+                print('You list notes:\n')
+                print(note)
+            else:
+                print('Error not found note')    
+
 
             
     
