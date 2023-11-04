@@ -1,3 +1,4 @@
+
 def __init__(self, note_id, title, body, created_time, modified_time):
     self.note_id = note_id
     self.title = title
