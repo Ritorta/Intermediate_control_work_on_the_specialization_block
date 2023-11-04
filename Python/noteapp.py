@@ -66,6 +66,14 @@ class NoteApp:
         else:
             print('Error not found note')    
 
+    def delete_note(self, note_id):
+        for note in self.notes:
+            if note.note_id == note_id:
+                self.notes.remove(note)
+                self.save_notes()
+                print('Note deleted success')
+                return
+        print('Error deleted note')    
 
             
     
