@@ -82,4 +82,14 @@ class NoteApp:
         except ValueError as e:
             print('Edit title fail:', e)
 
-       
+    def select_notes_by_date(self):
+
+        date = input('Enter the Date (dd-mm-yy): ')
+        selected_notes = []
+        for note in self.notes:
+            if note.created_time.split()[0] == date or note.modified_time.split()[0] == date:
+                selected_notes.append(note)
+        return selected_notes
+
+    
+
