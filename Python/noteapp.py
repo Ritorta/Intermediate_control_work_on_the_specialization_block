@@ -108,5 +108,3 @@ class NoteApp:
         print(f"Body: {note.body}")
         print(f"Created: {note.created_time}")
         print(f"Modified: {note.modified_time}")
-                    
-                    

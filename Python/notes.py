@@ -8,3 +8,4 @@ class Note:
 
     def __repr__(self):
         return f'iD note: {self.note_id}, Title: {self.title}, Created: {self.created_time}, Modified: {self.modified_time}'
+    
