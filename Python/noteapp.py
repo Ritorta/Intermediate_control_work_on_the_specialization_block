@@ -102,7 +102,6 @@ class NoteApp:
         except ValueError as e:
             print('Error:', e)
 
-
     def view_selected_note(self, note_id, note):
         print(f"ID: {note.note_id}")
         print(f"Title: {note.title}")
