@@ -15,15 +15,24 @@ def main():
             note_id, new_body = view.input_3()
             note_app.edit_note_body(note_id=note_id, new_body=new_body)
         elif num == 4:
+            selected_note = view.input_4(note_app.notes)
+            if selected_note is not None:
+                note_app.view_selected_note(selected_note.note_id, selected_note)
+            else:
+                print("Note not found.")
+            # note_id, notes = view.input_4(note_app.notes)
+            # for note in notes:
+            #     note_app.view_selected_note(note_id, note)    
+        elif num == 5:
             notes = note_app.select_notes_by_date()
             for note in notes:
                 print(note)   
-        elif num == 5:
-            note_app.view_all_notes()
         elif num == 6:
-            note_id = view.input_6()
-            note_app.delete_note(note_id=note_id)
+            note_app.view_all_notes()
         elif num == 7:
+            note_id = view.input_7()
+            note_app.delete_note(note_id=note_id)
+        elif num == 8:
             print('Goodbye')
             break
         else:

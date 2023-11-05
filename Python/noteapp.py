@@ -83,7 +83,6 @@ class NoteApp:
             print('Edit title fail:', e)
 
     def select_notes_by_date(self):
-
         date = input('Enter the Date (dd-mm-yy): ')
         selected_notes = []
         for note in self.notes:
@@ -91,5 +90,21 @@ class NoteApp:
                 selected_notes.append(note)
         return selected_notes
 
-    
+    # def view_selected_note(self, note_id, note):
+    #     for note in self.notes:
+    #             if note.note_id == note_id:
+                    
+    #                 print(f"ID: {note.note_id}")
+    #                 print(f"Title: {note.title}")
+    #                 print(f"Body: {note.body}")
+    #                 print(f"Created: {note.created_time}")
+    #                 print(f"Modified: {note.modified_time}")
 
+    def view_selected_note(self, note_id, note):
+        print(f"ID: {note.note_id}")
+        print(f"Title: {note.title}")
+        print(f"Body: {note.body}")
+        print(f"Created: {note.created_time}")
+        print(f"Modified: {note.modified_time}")
+                    
+                    

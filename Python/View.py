@@ -3,10 +3,11 @@ def user_input():
                     '1 - Create notes\n'
                     '2 - Edit note title\n'
                     '3 - Edit note body\n'
-                    '4 - View for date\n'
-                    '5 - View all notes\n'
-                    '6 - Delete notes\n'
-                    '7 - Exit\n'))
+                    '4 - View for select note\n'
+                    '5 - View for date\n'
+                    '6 - View all notes\n'
+                    '7 - Delete notes\n'
+                    '8 - Exit\n'))
     return ask
 
 def input_1():
@@ -31,8 +32,17 @@ def input_3():
             return note_id, new_body
         except ValueError:
             print('Error, please enter the number iD')     
-                
-def input_6():
+
+def input_4(notes):
+    note_id = int(input('Enter ID note: '))
+    for note in notes:
+        if note.note_id == note_id:
+            return note
+    
+    # note_id = int(input('Enter iD note: '))
+    # return notes, note_id
+
+def input_7():
     while True:
         try:
             note_id = int(input('Enter iD note: '))
