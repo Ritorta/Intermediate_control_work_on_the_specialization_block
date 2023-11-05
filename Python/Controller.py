@@ -19,10 +19,7 @@ def main():
             if selected_note is not None:
                 note_app.view_selected_note(selected_note.note_id, selected_note)
             else:
-                print("Note not found.")
-            # note_id, notes = view.input_4(note_app.notes)
-            # for note in notes:
-            #     note_app.view_selected_note(note_id, note)    
+                print("Note not found.")  
         elif num == 5:
             notes = note_app.select_notes_by_date()
             for note in notes:

@@ -38,9 +38,6 @@ def input_4(notes):
     for note in notes:
         if note.note_id == note_id:
             return note
-    
-    # note_id = int(input('Enter iD note: '))
-    # return notes, note_id
 
 def input_7():
     while True:
