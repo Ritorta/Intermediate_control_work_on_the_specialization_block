@@ -34,10 +34,14 @@ def input_3():
             print('Error, please enter the number iD')     
 
 def input_4(notes):
-    note_id = int(input('Enter ID note: '))
-    for note in notes:
-        if note.note_id == note_id:
-            return note
+    while True:
+        try:
+            note_id = int(input('Enter ID note: '))
+            for note in notes:
+                if note.note_id == note_id:
+                    return note
+        except ValueError:
+            print('Error, please enter the number iD')   
 
 def input_7():
     while True:

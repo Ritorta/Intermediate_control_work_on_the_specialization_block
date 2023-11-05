@@ -66,7 +66,7 @@ class NoteApp:
             print('You list notes:')
             for note in self.notes:
                 print(note)
-            input("Нажмите клавижшу для продолжения: ")
+            input("Press the key to continue: ")
         else:
             print('Error not found note')    
 
@@ -81,14 +81,27 @@ class NoteApp:
             raise ValueError('Please enter existing iD number')  
         except ValueError as e:
             print('Edit title fail:', e)
-
+ 
     def select_notes_by_date(self):
-        date = input('Enter the Date (dd-mm-yy): ')
-        selected_notes = []
-        for note in self.notes:
-            if note.created_time.split()[0] == date or note.modified_time.split()[0] == date:
-                selected_notes.append(note)
-        return selected_notes
+        try:
+            date = input('Enter the Date (dd-mm-yy): ')
+            try:
+                date_check = datetime.strptime(date, '%d-%m-%Y').date()
+            except ValueError:
+                raise ValueError('Invalid date format. Please enter the date in dd-mm-yy format.')
+
+            selected_notes = []
+            for note in self.notes:
+                if note.created_time.split()[0] == date or note.modified_time.split()[0] == date:
+                    selected_notes.append(note)
+
+            if not selected_notes:
+                raise ValueError('No notes found for the specified date.')
+
+            return selected_notes
+        except ValueError as e:
+            print('Error:', e)
+
 
     def view_selected_note(self, note_id, note):
         print(f"ID: {note.note_id}")

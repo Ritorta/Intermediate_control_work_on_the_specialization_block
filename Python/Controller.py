@@ -22,8 +22,9 @@ def main():
                 print("Note not found.")  
         elif num == 5:
             notes = note_app.select_notes_by_date()
-            for note in notes:
-                print(note)   
+            if notes:
+                for note in notes:
+                    print(note)
         elif num == 6:
             note_app.view_all_notes()
         elif num == 7:
@@ -34,5 +35,7 @@ def main():
             break
         else:
             print('Error: Invalid number, choice number is menu.')
+            input("Press the key to continue: ")
 
-main()
+if __name__ == '__main__':
+    main()
