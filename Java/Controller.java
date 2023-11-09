@@ -9,7 +9,7 @@ import java.util.Random;
 public class Controller 
 {
     private PriorityQueue<Toy> toyQueue;
-
+    // Add toys to the PriorityQueue collection
     public void addToy(Toy toy) 
     {
         if (toy.getQuantity() != 0)
@@ -24,7 +24,7 @@ public class Controller
             System.out.println("Toys " + toy.getName() + " ID " + toy.getId() + " are over!");
         }
     }
-    
+    // Comparison of toys by weight
     public Controller() 
     {
         toyQueue = new PriorityQueue<>((toy1, toy2) -> {
@@ -35,7 +35,7 @@ public class Controller
             return toy1.getDropChance() - toy2.getDropChance();
         });
     }
-
+    // Logic random toys
     public void getToy(int count)
     {
         Random random = new Random();
@@ -50,7 +50,7 @@ public class Controller
                 break;
             }
 
-            if (toy.getDropChance() >= 100 || toy.getDropChance() > random.nextInt(100)) 
+            if (toy.getDropChance() >= 100 && toy.getDropChance() > random.nextInt(100)) 
             {
                 System.out.println("Got toy with " + toy.getName() + " ID " + toy.getId());
             } 
@@ -64,8 +64,7 @@ public class Controller
             }
         }
     }
-    
-    
+    // Save file
     public void saveToysToFile(String filename) 
     {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) 

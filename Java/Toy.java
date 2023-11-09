@@ -5,7 +5,7 @@ public class Toy
     private int quantity;
     private int weight;
     private int dropChance;
-
+    // Constructuons
     public Toy(int id, String name, int quantity, int weight, int dropChance) 
     {
         this.id = id;
@@ -15,7 +15,7 @@ public class Toy
         this.dropChance = dropChance;
 
     }
-
+    // Gets metods
     public int getId() 
     {
         return id;
