@@ -19,7 +19,17 @@ public class Controller
         }
     }
     
-    
+    public Controller() 
+    {
+        toyQueue = new PriorityQueue<>((toy1, toy2) -> {
+            if (toy1.getDropChance() == toy2.getDropChance())
+            {
+                return toy2.getWeight() - toy1.getWeight();
+            }
+            return toy1.getDropChance() - toy2.getDropChance();
+            });
+    }
+
     
     
     
