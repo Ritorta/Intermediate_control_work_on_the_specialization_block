@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
@@ -63,9 +66,18 @@ public class Controller
     }
     
     
-    
-    
-    
-    
-   
+    public void saveToysToFile(String filename) 
+    {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) 
+        {
+            for (Toy toy : toyQueue) 
+            {
+                writer.write(toy.getId() + "," + toy.getName() + "," + toy.getQuantity() + "," + toy.getWeight() + "," + toy.getDropChance() + "\n");
+            }
+        } 
+        catch (IOException e) 
+        {
+            e.printStackTrace();
+        }
+    }
 }
