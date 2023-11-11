@@ -97,7 +97,7 @@ public class Controller
     //         e.printStackTrace();
     //     }
     // }
-
+    // Save file Raffle Toy and count number raffle
     public void addResultToFile(String result, String filename)
     {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true)))
@@ -118,7 +118,6 @@ public class Controller
             e.printStackTrace();
         }
     }
-
 }
 
 
