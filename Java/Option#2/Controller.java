@@ -98,7 +98,7 @@ public class Controller
             Toy prizeToy = prizeToys.remove(0);
     
             // Save the prize toy to file
-            try (FileWriter writer = new FileWriter("prize_toys.txt", true)) 
+            try (FileWriter writer = new FileWriter("prizeToys.txt", true)) 
             {
                 writer.write("Your toy prize: " + prizeToy.getName() + ", congratulations!" + "\n");
                 
