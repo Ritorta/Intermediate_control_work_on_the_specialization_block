@@ -57,19 +57,25 @@ public class Controller
         {
             System.out.println("Error DropChance = 0 or -1");
         }
-        else
-        {
-            Toy prizeToy = null;
-            for (Toy toy : toy) {
-                if (randomNumber < toy.getDropChance()) 
-                {
-                    prizeToy = toy;
-                    break;
-                }
-                randomNumber -= toy.getDropChance();
-            }
-        }
         
+        Toy prizeToy = null;
+        for (Toy toy : toy) {
+            if (randomNumber < toy.getDropChance()) 
+            {
+                prizeToy = toy;
+                break;
+            }
+            randomNumber -= toy.getDropChance();
+        }
+    
+        // add the prize toy to List
+        if (prizeToy != null && prizeToy.getQuantity() > 0) 
+        {
+            prizeToys.add(prizeToy);
+
+        // decrement the quantity of the prize toy
+            prizeToy.setQuantity(prizeToy.getQuantity() - 1);
+        }
         
     }
 
