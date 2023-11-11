@@ -5,6 +5,9 @@ import java.util.LinkedList;
 import java.util.PriorityQueue;
 import java.util.Queue;
 import java.util.Random;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.LineNumberReader;
 
 public class Controller 
 {
@@ -83,9 +86,31 @@ public class Controller
         }
     }
     // Save file Raffle Toy 
-    public void addResultToFile(String result, String filename) 
+    // public void addResultToFile(String result, String filename) 
+    // {
+    //     try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) 
+    //     {
+    //         writer.write(result + "\n");
+    //     } 
+    //     catch (IOException e) 
+    //     {
+    //         e.printStackTrace();
+    //     }
+    // }
+
+    public void addResultToFile(String result, String filename)
     {
-        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true)))
+        {
+            int count = 0;
+            BufferedReader reader = new BufferedReader(new FileReader(filename));
+            while (reader.readLine() != null)
+                {
+                    count++;
+                }
+            reader.close();
+
+            writer.write("Count raffle #" + (count + 1) + " - Result:" + "\n");
             writer.write(result + "\n");
         } 
         catch (IOException e) 
@@ -93,5 +118,9 @@ public class Controller
             e.printStackTrace();
         }
     }
-    
+
 }
+
+
+    
+

@@ -10,7 +10,7 @@ public class Main
         
         String result = toyController.getToy(10);
         System.out.println(result);
-        toyController.saveToysToFile("ToyList.txt");
-        toyController.addResultToFile("Result: Won a prize!" + result, "RaffleToy.txt");
+        toyController.saveToysToFile("toyList.txt");
+        toyController.addResultToFile(result, "raffleToy.txt");
     }
 }
