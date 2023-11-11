@@ -1,0 +1,22 @@
+Result: Won a prize!Got toy with Doll ID 2
+Toy with ID 2 did not drop.
+Toy with ID 2 did not drop.
+Got toy with Car ID 1
+Got toy with Car ID 1
+Toy with ID 1 did not drop.
+Toy with ID 2 did not drop.
+Got toy with Car ID 1
+Got toy with Ball ID 3
+Got toy with Ball ID 3
+
+Result: Won a prize!Got toy with Doll ID 2
+Toy with ID 2 did not drop.
+Toy with ID 2 did not drop.
+Toy with ID 1 did not drop.
+Got toy with Car ID 1
+Toy with ID 1 did not drop.
+Toy with ID 2 did not drop.
+Toy with ID 1 did not drop.
+Got toy with Ball ID 3
+Got toy with Ball ID 3
+

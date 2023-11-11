@@ -35,43 +35,46 @@ public class Controller
             return toy1.getDropChance() - toy2.getDropChance();
         });
     }
-    // Logic random toys
-    public void getToy(int count)
+    // Logic random toys and transformation to String for save results
+    public String getToy(int count)
     {
         Random random = new Random();
-        
+        StringBuilder transfStr = new StringBuilder();
         Queue<Toy> queue = new LinkedList<>(toyQueue);
+        
         for (int i = 0; i < count; i++) 
         {
             Toy toy = queue.poll();
             if (toy == null) 
             {
-                System.out.println("No more toys!");
+                transfStr.append("No more toys!").append("\n");
                 break;
             }
 
             if (toy.getDropChance() >= 100 && toy.getDropChance() > random.nextInt(100)) 
             {
-                System.out.println("Got toy with " + toy.getName() + " ID " + toy.getId());
+                transfStr.append("Got toy with ").append(toy.getName()).append(" ID ").append(toy.getId()).append("\n");
             } 
             else if(toy.getDropChance() >= 1 && toy.getDropChance() <= 99 && toy.getDropChance() > random.nextInt(100))
             {
-                System.out.println("Got toy with " + toy.getName() + " ID " + toy.getId());
+                transfStr.append("Got toy with ").append(toy.getName()).append(" ID ").append(toy.getId()).append("\n");
             }
             else
             {
-                System.out.println("Toy with ID " + toy.getId() + " did not drop.");
+                transfStr.append("Toy with ID ").append(toy.getId()).append(" did not drop.").append("\n");
             }
         }
+        return transfStr.toString();
     }
-    // Save file
+    // Save file Toy
     public void saveToysToFile(String filename) 
     {
         try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename))) 
         {
             for (Toy toy : toyQueue) 
             {
-                writer.write(toy.getId() + "," + toy.getName() + "," + toy.getQuantity() + "," + toy.getWeight() + "," + toy.getDropChance() + "\n");
+                writer.write("Toy: ID " + toy.getId() + ", " + "Name " + toy.getName() + ", " + "Quantity " + toy.getQuantity() + 
+                ", " + "Weight " + toy.getWeight() + ", " + "DropChance " + toy.getDropChance() + "\n");
             }
         } 
         catch (IOException e) 
@@ -79,4 +82,16 @@ public class Controller
             e.printStackTrace();
         }
     }
+    // Save file Raffle Toy 
+    public void addResultToFile(String result, String filename) 
+    {
+        try (BufferedWriter writer = new BufferedWriter(new FileWriter(filename, true))) {
+            writer.write(result + "\n");
+        } 
+        catch (IOException e) 
+        {
+            e.printStackTrace();
+        }
+    }
+    
 }

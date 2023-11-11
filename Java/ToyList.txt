@@ -1,0 +1,12 @@
+Toy: ID 2, Name Doll, Quantity 4, Weight 12, DropChance 40
+Toy: ID 2, Name Doll, Quantity 4, Weight 12, DropChance 40
+Toy: ID 2, Name Doll, Quantity 4, Weight 12, DropChance 40
+Toy: ID 1, Name Car, Quantity 4, Weight 10, DropChance 40
+Toy: ID 1, Name Car, Quantity 4, Weight 10, DropChance 40
+Toy: ID 1, Name Car, Quantity 4, Weight 10, DropChance 40
+Toy: ID 2, Name Doll, Quantity 4, Weight 12, DropChance 40
+Toy: ID 1, Name Car, Quantity 4, Weight 10, DropChance 40
+Toy: ID 3, Name Ball, Quantity 4, Weight 50, DropChance 100
+Toy: ID 3, Name Ball, Quantity 4, Weight 50, DropChance 100
+Toy: ID 3, Name Ball, Quantity 4, Weight 50, DropChance 100
+Toy: ID 3, Name Ball, Quantity 4, Weight 50, DropChance 100
