@@ -100,7 +100,7 @@ public class Controller
             // Save the prize toy to file
             try (FileWriter writer = new FileWriter("prize_toys.txt", true)) 
             {
-                writer.write(prizeToy.getId() + "," + prizeToy.getName() + "\n");
+                writer.write("Your toy prize: " + prizeToy.getName() + ", congratulations!" + "\n");
                 
             } catch (IOException e) 
             {

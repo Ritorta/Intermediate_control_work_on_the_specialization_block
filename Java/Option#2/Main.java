@@ -3,21 +3,17 @@ import java.io.IOException;
 public class Main {
     public static void main(String[] args) throws IOException
     {
-        Controller toyController = new Controller();
-            
-        // add some toys
-        toyController.addToy(1, "Toy 1", 10, 20);
-        toyController.addToy(2, "Toy 2", 5, 10);
-        toyController.addToy(3, "Toy 3", 20, 70);
+        Controller toyController = new Controller();   
+        // Add some toys
+        toyController.addToy(1, "Car", 10, 20);
+        toyController.addToy(2, "Doll", 5, 10);
+        toyController.addToy(3, "Constructor", 20, 70);   
 
-        
-        // set the weight of a toy
+        // Set the DropChance Toy
         toyController.setToyDropChance(2, 30);
-
-        // play the game
+        // Roll the toy
         toyController.RollPrizeToy();
-
-        // get the prize toy
+        // Save prize toy
         toyController.removeSavePrizeToy();
     }
 }
