@@ -60,8 +60,4 @@ public class Toy
         this.dropChance = dropChance;
         
     }
-
-    public void add(Toy toy) {
-    } 
-    
 }

@@ -6,25 +6,26 @@ import java.util.Random;
 
 public class Controller 
 {
-    private List<Toy> toy;
+    private List<Toy> toys;
     private List<Toy> prizeToys;
 
     public Controller()
     {
-        toy = new ArrayList<>();
+        toys = new ArrayList<>();
         prizeToys = new ArrayList<>();
+
     }
 
     public void addToy(int id, String name, int quantity, double DropChance)
     {
         Toy toy = new Toy(id, name, quantity, DropChance);
-        toy.add(toy);
+        toys.add(toy);
 
     }
 
     public void setToyDropChance(int id, double DropChance) 
     {
-        for (Toy toy : toy) 
+        for (Toy toy : toys) 
         {
             if (toy.getId() == id) 
             {
@@ -37,32 +38,39 @@ public class Controller
     private double RollDropChance()
     {
         double DropChance = 0;
-        for (Toy toy : toy) 
+        for (Toy toy : toys) 
         {
             DropChance += toy.getDropChance();
+            
         }
+        System.out.println(DropChance);
         return DropChance;
     } 
 
     public void RollPrizeToy()
     {
+
         double DropChance = RollDropChance();
+        
         // Random Generator
         Random rand = new Random();
+
         double randomNumber = rand.nextDouble() * DropChance;
         // Search the prize toy
-        if (toy.isEmpty()) 
+        if (toys.isEmpty()) 
         {
             System.out.println("Toys are over");
+            return;
         }
 
         if (DropChance <= 0) 
         {
             System.out.println("Error DropChance = 0 or -1");
+            return;
         }
         
         Toy prizeToy = null;
-        for (Toy toy : toy) {
+        for (Toy toy : toys) {
             if (randomNumber < toy.getDropChance()) 
             {
                 prizeToy = toy;
