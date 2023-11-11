@@ -1,3 +1,5 @@
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -13,8 +15,9 @@ public class Controller
         prizeToys = new ArrayList<>();
     }
 
-    public void addToy(Toy toy)
+    public void addToy(int id, String name, int quantity, double DropChance)
     {
+        Toy toy = new Toy(id, name, quantity, DropChance);
         toy.add(toy);
 
     }
@@ -68,21 +71,33 @@ public class Controller
             randomNumber -= toy.getDropChance();
         }
     
-        // add the prize toy to List
+        // Add the prize toy to List
         if (prizeToy != null && prizeToy.getQuantity() > 0) 
         {
             prizeToys.add(prizeToy);
 
-        // decrement the quantity of the prize toy
+        // Decrement the quantity of the prize toy
             prizeToy.setQuantity(prizeToy.getQuantity() - 1);
         }
         
     }
 
+    public void removeSavePrizeToy() throws IOException 
+    {
+        if (prizeToys.size() > 0) 
+        {
+            // Remove the first prize toy in list
+            Toy prizeToy = prizeToys.remove(0);
     
-    
-        
-
-
-
+            // Save the prize toy to file
+            try (FileWriter writer = new FileWriter("prize_toys.txt", true)) 
+            {
+                writer.write(prizeToy.getId() + "," + prizeToy.getName() + "\n");
+                
+            } catch (IOException e) 
+            {
+                e.printStackTrace();
+            }
+        }
+    }
 }
