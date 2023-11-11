@@ -13,23 +13,55 @@ public class Toy
         this.dropChance = dropChance;
     }
 
-    public int getId() {
+    public int getId() 
+    {
         return id;
+
     }
 
-    public String getName() {
+    public String getName() 
+    {
         return name;
+
     }
 
-    public int getQuantity() {
+    public int getQuantity() 
+    {
         return quantity;
+
     }
 
-    public double getDropChance() {
+    public double getDropChance() 
+    {
         return dropChance;
+
     }
 
-    
-    
+    public void setId(int id) 
+    {
+        this.id = id;
+
+    }
+
+    public void setName(String name) 
+    {
+        this.name = name;
+
+    }
+
+    public void setQuantity(int quantity)
+    {
+        this.quantity = quantity;
+
+    }
+
+    public void setDropChance(double dropChance) 
+    {
+        this.dropChance = dropChance;
+        
+    }
+
+    public void add(Toy toy) {
+    } 
     
 }
